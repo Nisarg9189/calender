@@ -25,7 +25,7 @@ export default function Hero({ year, month, season }) {
                 alt="summer_img"
                 className="w-full h-full object-cover"
             /> */}
-            <div className="relative flex-1">
+            <div className="relative w-full h-full">
                 <img
                     src={summer}
                     alt="summer_img"

@@ -129,10 +129,10 @@ export default function CalendarFormat() {
 
     return (
         // <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 w-full flex flex-col h-full sm:min-h-0 sm:h-full">
-        <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 w-full h-full flex flex-col">
+        <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 w-full flex flex-col" style={{ height: "700px" }}>
 
-            {/* Hero — compact fixed height on mobile, 40% on desktop */}
-            <div className="basis-1/2 min-h-0">
+            {/* Hero — exactly 50% = 350px */}
+            <div style={{ height: "350px", flexShrink: 0, overflow: "hidden" }}>
                 <Hero
                     year={year}
                     month={month}
@@ -143,8 +143,8 @@ export default function CalendarFormat() {
                 />
             </div>
 
-            {/* Body — vertical stack on mobile, side-by-side on desktop */}
-            <div className="flex flex-col sm:flex-row w-full basis-1/2 min-h-0">
+            {/* Body — exactly 50% = 350px, side-by-side on desktop */}
+            <div className="flex flex-col sm:flex-row w-full overflow-hidden" style={{ height: "350px" }}>
                 {/* <div className="flex flex-col sm:flex-row w-full overflow-y-auto sm:overflow-hidden"> */}
 
                 {/* NoteSection — full width on mobile, half on desktop */}
