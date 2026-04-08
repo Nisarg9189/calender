@@ -20,14 +20,21 @@ export default function Hero({ year, month, season }) {
     return (
         <div className="relative w-full h-full bg-white overflow-hidden">
 
-            <img
+            {/* <img
                 src={summer}
                 alt="summer_img"
                 className="w-full h-full object-cover"
-            />
+            /> */}
+            <div className="relative flex-1">
+                <img
+                    src={summer}
+                    alt="summer_img"
+                    className="w-full h-full object-cover"
+                />
+            </div>
 
             {/* Wave Container */}
-            <div className="absolute bottom-0 left-0 w-full" style={{ height: "45%" }}>
+            <div className="absolute bottom-0 left-0 w-full" style={{ height: "30%" }}>
 
                 {/* Wave 1 - lightest / back */}
                 <div className="absolute bottom-0 left-0 w-full h-full">
@@ -84,14 +91,24 @@ export default function Hero({ year, month, season }) {
 
             <div className="absolute bottom-8 left-8">
                 <p className={`text-3xl font-light tracking-widest ${colors[season]}`}>
-                    {season} {seasonEmoji[season]}
+
+                    {/* Mobile → emoji only */}
+                    <span className="sm:hidden">
+                        {seasonEmoji[season]}
+                    </span>
+
+                    {/* Desktop → full text */}
+                    <span className="hidden sm:inline">
+                        {season} {seasonEmoji[season]}
+                    </span>
+
                 </p>
             </div>
 
             {/* Year + Month */}
-            <div className="absolute bottom-8 right-6 text-white text-right z-10 drop-shadow-lg">
-                <p className="text-2xl font-light tracking-widest">{year}</p>
-                <p className="text-2xl font-bold tracking-widest">{months[month - 1]}</p>
+            <div className="absolute bottom-8 right-8 text-white text-right z-10 drop-shadow-2xl">
+                <p className="text-xl font-extralight tracking-[0.2em] opacity-90 mb-1">{year}</p>
+                <p className="text-5xl font-black tracking-widest uppercase leading-none">{months[month]}</p>
             </div>
 
             {/* CSS Keyframes injected via style tag */}

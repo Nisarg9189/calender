@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import Wall from './components/wall/Wall'
 
 function App() {
-  const [isLoginView, setIsLoginView] = useState(true);
+
 
   return (
-    <div>
+    <div className='w-full h-full flex justify-center items-center'>
       <Wall />
     </div>
   );
