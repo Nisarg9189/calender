@@ -1,16 +1,18 @@
 import React from "react";
 import summer from "../heroSection/summer.jpg";
 
-export default function Hero({ year, month, season }) {
-    console.log(`year: ${year}`);
-    console.log(`month: ${month}`);
+export default function Hero({ year, month, season, seasonStyles, currDate, onOpenPicker }) {
+    const months = [
+        "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
+    ];
 
-    const months = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
     const colors = {
-        Summer: "text-red-500",
+        Summer: "text-orange-500",
         Monsoon: "text-blue-700",
         Winter: "text-gray-700",
-    }
+    };
+
     const seasonEmoji = {
         Summer: "☀️",
         Monsoon: "🌧️",
@@ -18,24 +20,19 @@ export default function Hero({ year, month, season }) {
     };
 
     return (
-        <div className="relative w-full h-full bg-white overflow-hidden">
+        <div className="relative w-full h-[400px] bg-white overflow-hidden">
 
-            {/* <img
-                src={summer}
-                alt="summer_img"
-                className="w-full h-full object-cover"
-            /> */}
+            {/* Hero image */}
             <div className="relative w-full h-full">
                 <img
                     src={summer}
-                    alt="summer_img"
+                    alt="season_background"
                     className="w-full h-full object-cover"
                 />
             </div>
 
             {/* Wave Container */}
             <div className="absolute bottom-0 left-0 w-full" style={{ height: "30%" }}>
-
                 {/* Wave 1 - lightest / back */}
                 <div className="absolute bottom-0 left-0 w-full h-full">
                     <svg
@@ -86,32 +83,36 @@ export default function Hero({ year, month, season }) {
                         <path d="M1440,65 C1290,100 1090,20 890,65 C690,110 490,25 290,65 C140,90 0,40 0,40 L0,120 L1440,120 Z" />
                     </svg>
                 </div>
-
             </div>
 
-            <div className="absolute bottom-8 left-8">
+            {/* Season label */}
+            <div className="absolute bottom-8 left-8 z-10">
                 <p className={`text-3xl font-light tracking-widest ${colors[season]}`}>
-
-                    {/* Mobile → emoji only */}
-                    <span className="sm:hidden">
-                        {seasonEmoji[season]}
-                    </span>
-
-                    {/* Desktop → full text */}
-                    <span className="hidden sm:inline">
-                        {season} {seasonEmoji[season]}
-                    </span>
-
+                    <span className="sm:hidden">{seasonEmoji[season]}</span>
+                    <span className="hidden sm:inline">{season} {seasonEmoji[season]}</span>
                 </p>
             </div>
 
-            {/* Year + Month */}
-            <div className="absolute bottom-8 right-8 text-white text-right z-10 drop-shadow-2xl">
+            {/* Month / Year — clickable to open picker */}
+            <button
+                type="button"
+                onClick={onOpenPicker}
+                className="absolute bottom-6 right-8 text-white text-right z-10 drop-shadow-2xl
+                    group cursor-pointer bg-transparent border-none p-0"
+                title="Tap to change month / year"
+            >
                 <p className="text-xl font-extralight tracking-[0.2em] opacity-90 mb-1">{year}</p>
-                <p className="text-5xl font-black tracking-widest uppercase leading-none">{months[month]}</p>
-            </div>
+                <p className="text-3xl font-black tracking-widest uppercase leading-none
+                    group-hover:opacity-80 transition-opacity duration-200">
+                    {months[month]}
+                </p>
+                <p className="text-[10px] tracking-widest opacity-0 group-hover:opacity-60
+                    transition-opacity duration-200 mt-1 uppercase font-semibold">
+                    tap to change
+                </p>
+            </button>
 
-            {/* CSS Keyframes injected via style tag */}
+            {/* Wave keyframes */}
             <style>{`
                 @keyframes waveFlow {
                     0%   { transform: translateX(0); }
