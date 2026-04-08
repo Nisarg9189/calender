@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Manrope", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-primary: #000000;
+  --color-secondary: #47607e;
+  --color-surface-base: #f8f9fa;
+  --color-surface-container: #edeeef;
+  --color-surface-low: #f3f4f5;
+  --color-surface-lowest: #ffffff;
+  --color-accent: #648d78; /* derived from on_primary_container */
+  --color-error: #ba1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-surface-base text-gray-900 font-sans;
+  }
+}
+
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom hide-scrollbar utility if needed */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
