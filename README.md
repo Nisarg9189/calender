@@ -1,16 +1,136 @@
-# React + Vite
+# 📅 Interactive Wall Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, responsive wall calendar component built using React and Tailwind CSS.
+Inspired by a physical hanging calendar, this project combines visual aesthetics with practical features like date range selection and note-taking.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+* 🧱 **Wall Calendar UI**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  * Realistic hook and spiral binding design
+  * Clean and modern layout
 
-## Expanding the ESLint configuration
+* 🖼 **Hero Section**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  * Displays current month and year
+  * Seasonal theming for dynamic visuals
+
+* 📅 **Date Range Selection**
+
+  * Select start and end dates
+  * Visual highlighting for selected range
+
+* 📝 **Notes System**
+
+  * Attach notes to specific dates
+  * Keyboard-friendly input navigation
+
+* 💾 **LocalStorage Persistence**
+
+  * Notes remain saved even after refresh
+
+* 🎯 **Smart Visual Indicators**
+
+  * Sundays highlighted in red
+  * Holidays marked with indicators
+
+* 🔔 **Toast Notifications**
+
+  * Real-time feedback for user actions
+
+* 📱 **Fully Responsive**
+
+  * Works smoothly on desktop, tablet, and mobile
+
+---
+
+## 🛠 Tech Stack
+
+* **Frontend:** React.js
+* **Styling:** Tailwind CSS
+* **Language:** JavaScript (ES6+)
+
+---
+
+## 📸 Preview
+
+(Add screenshots or GIF here)
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+```
+
+---
+
+### 2️⃣ Navigate to project folder
+
+```bash
+cd your-repo-name
+```
+
+---
+
+### 3️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+### 4️⃣ Run locally
+
+```bash
+npm run dev
+```
+
+---
+
+### 5️⃣ Open in browser
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 🌐 Live Demo
+
+https://calendertask-eight.vercel.app
+
+---
+
+## 💡 Design Approach
+
+This project focuses on replicating the look and feel of a physical wall calendar while maintaining usability and responsiveness.
+
+Key design decisions include:
+
+* Clear visual hierarchy between hero section and calendar grid
+* Minimal and intuitive interactions for date selection and notes
+* Responsive layout adjustments for different screen sizes
+* Subtle animations and feedback to enhance user experience
+
+---
+
+## 🚀 Future Improvements
+
+* Drag-based range selection
+* Event/holiday customization by user
+* Dark mode support
+* Export notes as PDF
+
+---
+
+## 👨‍💻 Author
+
+**Nisarg Patel**
+
