@@ -50,13 +50,7 @@ Inspired by a physical hanging calendar, this project combines visual aesthetics
 
 * **Frontend:** React.js
 * **Styling:** Tailwind CSS
-* **Language:** JavaScript (ES6+)
-
----
-
-## 📸 Preview
-
-(Add screenshots or GIF here)
+* **Language:** JavaScript
 
 ---
 
