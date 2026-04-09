@@ -4,7 +4,7 @@ import NoteSection from "../noteSection/NoteSection";
 import DateSection from "../dateSection/DateSection";
 import MonthPicker from "../monthPicker/MonthPicker";
 
-// ─── Toast component ────────────────────────────────────────────────────────
+// Toast component
 function Toast({ id, message, type, icon, onRemove }) {
     const colors = {
         info: "bg-sky-500 text-white",
@@ -31,7 +31,7 @@ function Toast({ id, message, type, icon, onRemove }) {
     );
 }
 
-// ─── Main calendar ──────────────────────────────────────────────────────────
+// Main calendar 
 export default function CalendarFormat() {
     const [currDate, setCurrDate] = useState(new Date());
     const [selectDate, setSelectDate] = useState(null);
@@ -85,7 +85,7 @@ export default function CalendarFormat() {
 
     return (
         <>
-            {/* ── Toast container ── */}
+            {/* Toast container */}
             <div className="fixed top-4 right-4 z-[9999] flex flex-col gap-2 pointer-events-none">
                 {toasts.map((t) => (
                     <div key={t.id} className="pointer-events-auto">
@@ -94,7 +94,7 @@ export default function CalendarFormat() {
                 ))}
             </div>
 
-            {/* ── Month / Year picker overlay ── */}
+            {/* Month / Year picker */}
             {pickerOpen && (
                 <MonthPicker
                     currDate={currDate}
@@ -106,7 +106,7 @@ export default function CalendarFormat() {
                 />
             )}
 
-            {/* ── Calendar card ── */}
+            {/* Calendar card */}
             <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20 w-full h-full flex flex-col">
 
                 {/* Hero — top half */}
